@@ -1,0 +1,27 @@
+.desktop{
+  @media #{media('<',d)} {
+    display: none !important;
+  }
+}
+
+.mobile{
+  @media #{media('>', m)} {
+    display: none !important;
+  }
+}
+
+.tablet{
+  @media #{media('>',d)} {
+    display: none !important;
+  }
+
+  @media #{media('<',m)} {
+    display: none !important;
+  }
+}
+
+.devices{
+  @media #{media('>',d)} {
+    display: none !important;
+  }
+}

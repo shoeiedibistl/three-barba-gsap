@@ -1,0 +1,8 @@
+mixin accordion-ui(text)
+  .accordion-ui(class=allMods)&attributes(attributes)
+    .accordion-ui__item
+      .accordion-ui__header
+        p.title-32=text
+        +reset
+      .accordion-ui__content
+        block

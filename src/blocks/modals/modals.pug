@@ -1,0 +1,27 @@
+
+mixin response-modal 
+  .modal(id=attributes.id)
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+      .modal__wrapper.modal__wrapper--response
+        .modal__test 
+          |CONTENT
+        .modal__cross(data-modal-close='')
+          +reset.modal__cross-svg
+
+mixin test-modal 
+  .modal(id='test-modal')
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+      .modal__wrapper
+        .modal__test 
+          |CONTENT
+        .modal__close(data-modal-close='')
+          +reset.modal__svg
+
+mixin empty-modal
+  .modal(id='default-modal')
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+
+

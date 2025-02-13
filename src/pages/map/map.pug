@@ -1,0 +1,16 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'map'
+    const pageTitle = 'map'
+
+block modal
+  +loader
+
+block content
+  main.map
+    section.map__body
+      img.map__bg(src="../../images/map.png", alt="")
+
+      +plane-svg

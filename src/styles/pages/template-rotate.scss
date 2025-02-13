@@ -1,0 +1,32 @@
+.template-rotate {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: rem(100px);
+
+  &__block {
+    background-color: skyblue;
+
+    margin-inline: rem(200px);
+    padding: rem(200px) rem(40px);
+  }
+
+  &__text {
+    background-color: beige;
+
+    width: fit-content;
+
+    margin-inline: rem(200px);
+    padding: rem(40px);
+  }
+}
+
+[data-template-rotating-wrapper] {
+  perspective: 50vw;
+}
+
+[data-template-rotating-block] {
+  transition: 1s ease-out;
+  will-change: transform;
+}

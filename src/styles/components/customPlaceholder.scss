@@ -1,62 +1,45 @@
 .custom-placeholder {
   &__service {
-    pointer-events: none;
-
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
+    pointer-events: none;
 
     span {
-      pointer-events: none;
-
       position: absolute;
-      top: 0;
       left: $custom-placeholder-left;
+      top: rem(21px);
       transform-origin: left top;
-
-      font-size: rem(22px);
-      color: color(black);
-      letter-spacing: -0.01em;
-
       transition: $transition;
-
-      @media #{media("<")} {
-        font-size: rem(22px);
-      }
-    }
-
-    svg {
       pointer-events: none;
-      cursor: pointer;
-
-      position: absolute;
-      z-index: 1;
-      top: rem(5px);
-      right: 0;
-
-      width: rem(24px);
-      height: rem(24px);
-
-      opacity: 0;
-
-      @media #{media('<',d)} {
-        top: 0;
-        width: rem(20px);
-        height: rem(20px);
-      }
-    }
-  }
-
-  &_white {
-    span {
-      color: color(white);
+      color: var(--1, #62215b);
+      font-size: rem(16px);
+      font-weight: 420;
+      text-transform: uppercase;
+      opacity: 0.6;
     }
 
     svg {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      top: rem(6px);
+      right: rem(10px);
+      cursor: pointer;
+      width: rem(48px);
+      height: rem(48px);
+
       path {
-        stroke: color(white);
+        transition: $transition;
+        stroke: #62215b;
+        opacity: 0.6;
+      }
+
+      &:hover {
+        path {
+          opacity: 1;
+        }
       }
     }
   }

@@ -1,0 +1,31 @@
+.transition-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+  z-index: 999;
+  transform: translateY(120%);
+
+  &.--active {
+    transform: translateY(0);
+  }
+
+  svg {
+    width: rem(221px);
+    height: rem(55px);
+
+    @media #{media('<',d)} {
+      width: rem(129px);
+      height: rem(32px);
+    }
+  }
+
+  &_black {
+    background: var(--Dark-Main, #474e5a);
+  }
+  &_white {
+    background: var(--Blue-Second, #8dabce);
+  }
+}

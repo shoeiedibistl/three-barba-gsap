@@ -1,0 +1,32 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'sergey-hand'
+    const pageTitle = 'sergey-hand'
+
+block content
+  main
+    .inner
+      .sergey-hand
+        .sergey-hand__svg-anim
+          br
+          br
+          br
+          h2 анимация svg
+          br
+          br
+          +hand-svg 
+          
+        .sergey-hand__smil-anim
+          br
+          br
+          br
+          h2 анимация smil
+          br
+          br
+          +hand-svg-smil
+          br
+          br
+
+

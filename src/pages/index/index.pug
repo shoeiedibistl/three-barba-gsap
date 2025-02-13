@@ -4,18 +4,17 @@ block variables
   -
     const pageTitle = 'Index'
 
-block content
-  main(data-barba='container', data-barba-namespace=pageName)
-    .inner
-      h1= pageName
+    const pages = [
+      {
+        name: 'main',
+        path: 'main'
+      }
+    ] 
 
-      br
-      br
-      br
-      a(href='blocks.html') Repository blocks
-      br
-      br
-      a(href='main.html') Main
-      br
-      br
-      a(href='ui.html') UI
+block content
+  main.index
+
+    ul.index__pages
+      each page in pages
+        li.index__pages-item
+          a(href=page.path).index__link.text-18= page.name

@@ -1,0 +1,59 @@
+
+
+//передаем уникальный io
+mixin pictureRandom(uniqueId)
+  -
+    function generateUniqueId() {
+      return Math.random().toString(36).substr(2, 9);
+    }
+    var uniqueId = generateUniqueId();
+    var file = {
+      getRandomImage() {
+        // Формируем URL для случайного изображения
+        return `https://random.responsiveimages.io/v1/generate?&id=${uniqueId}`;
+      }
+    };
+    var randomImageUrl = file.getRandomImage();
+
+  picture.picture&attributes(attributes)
+    source(
+      type="image/webp"
+      srcset=`${randomImageUrl}&format=webp 1x`
+      alt=fileName
+      class="lazyload" 
+    )
+    source(
+      srcset=`${randomImageUrl}&format=jpg 1x`
+      alt=fileName
+      class="lazyload" 
+    )
+    source(
+      srcset=`${randomImageUrl}&format=png 1x`
+      alt=fileName
+      class="lazyload" 
+    )
+    if isMobileFileName
+      source(
+        type="image/webp"
+        srcset=`${randomImageUrl}&format=webp 1x`
+        alt=fileName
+        class="lazyload" 
+        media="(max-width: 768px)"  
+      )
+      source(
+        srcset=`${randomImageUrl}&format=jpg 1x`
+        alt=fileName
+        class="lazyload" 
+        media="(max-width: 768px)" 
+      )
+      source(
+        srcset=`${randomImageUrl}&format=png 1x`
+        alt=fileName
+        class="lazyload" 
+        media="(max-width: 768px)" 
+      )
+    img.picture__img(
+      class="lazyload" 
+      data-src=`${randomImageUrl}`
+      alt=fileName
+    )

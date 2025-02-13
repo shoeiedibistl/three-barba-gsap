@@ -1,22 +1,26 @@
 block variables
-include ../pug/mixins
+include ../blocks/mixins
 
 doctype html
 html(lang='ru')
   block head
     head
       meta(charset='utf-8')
-      title= pageTitle
-      meta(content='width=device-width, initial-scale=1', name='viewport')
-      meta(content='ie=edge', http-equiv='x-ua-compatible')
-      meta(name='theme-color', content='#4285f4')
-      link(href='https://vitejs.dev/logo.svg', rel='icon', type='image/x-icon')
-  body(data-barba='wrapper')
+      title=pageTitle
+      meta(content='width=device-width, initial-scale=1, user-scalable=no' name='viewport')
+      meta(name="format-detection" content="telephone=no")
+      meta(content='ie=edge' http-equiv='x-ua-compatible')
+      link(href='https://vitejs.dev/logo.svg' rel='icon' type='image/x-icon')
+  body(data-barba="wrapper")
+    //-+transition-screen
     .wrapper
-      block header
-        include ../pug/blocks/header/header
-      block content
-      block footer
-        include ../pug/blocks/footer/footer
+      //- block header
+      //-   include ../blocks/header/header
+      .modal-block
+        block modal
+      .content(data-barba="container" data-barba-namespace=pageName)
+        block content
+      //- block footer
+      //-   include ../blocks/footer/footer
     block scripts
-      script(type='module', src='../../js/index.js')
+      script(type='module' src='../../js/index.js')

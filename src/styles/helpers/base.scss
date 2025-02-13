@@ -1,0 +1,30 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: $font;
+
+  .inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 25px;
+
+    @media #{media('<',l)} {
+      max-width: 100%;
+    }
+
+    @media #{media('<',m)} {
+      padding: 0 10px;
+    }
+  }
+
+  main {
+    flex: 1 0;
+  }
+}
+
+body {
+  overflow: hidden;
+}

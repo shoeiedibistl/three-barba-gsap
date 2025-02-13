@@ -1,0 +1,14 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'sergey-canvas'
+    const pageTitle = 'sergey-canvas'
+
+block content
+  main
+    .inner.canvas-page
+      h2 canvasTriangles
+      canvas#canvasTriangles
+      h2 canvasPacman
+      canvas#canvasPacman

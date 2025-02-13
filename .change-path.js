@@ -1,6 +1,6 @@
-import fs from 'node:fs'
 import path, { resolve } from 'node:path'
 import url from 'node:url'
+import fs from 'node:fs'
 
 const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
 

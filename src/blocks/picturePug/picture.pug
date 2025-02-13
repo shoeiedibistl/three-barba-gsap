@@ -1,0 +1,72 @@
+//Для добавления мобильной версии картинки добавляем вторым параметром true
+//Например +picture('image.jpg', 'true')
+//Миксин будет искать картинку с названием image-mob.jpg (тоесть вторая картинка должна иметь такое же название как и основная, только с добавлением -mob.png/jpg и тд)
+
+
+
+mixin picture(fileName, isMobileFileName)
+  -
+    var file = {
+      getTitle(filename) {
+        var segments = filename.split('.');
+        segments.pop();
+        return segments.join('.');
+      },
+      getExtension(filename) {
+        return filename.split('.').pop();
+      },
+      getPath(title, extension) {
+        return `../../images/${title}.${extension}`;
+      },
+    };
+    var fileTitle = file.getTitle(fileName);
+    var fileExtension = file.getExtension(fileName);
+
+  picture.picture&attributes(attributes)
+
+    if isMobileFileName
+      source(
+        type="image/webp"
+        srcset=`${file.getPath(fileTitle + '-mob', "webp")} `
+        class="lazyload" 
+        media="(max-width: 768px)"  
+      )
+      if fileExtension === 'png'
+        source(
+          type="image/png"
+          srcset=`${file.getPath(fileTitle + '-mob', "png")} `
+          class="lazyload" 
+          media="(max-width: 768px)" 
+        )
+      else
+        source(
+          type="image/jpeg"
+          srcset=`${file.getPath(fileTitle + '-mob', "jpg")} `
+          class="lazyload" 
+          media="(max-width: 768px)" 
+        )
+    
+    source(
+      type="image/webp"
+      srcset=`${file.getPath(fileTitle, "webp")} `
+      class="lazyload" 
+    )
+    if fileExtension === 'png'
+      source(
+        type="image/png"
+        srcset=`${file.getPath(fileTitle, "png")} `
+        class="lazyload" 
+      )
+    else
+      source(
+        type="image/jpeg"
+        srcset=`${file.getPath(fileTitle, "jpg")} `
+        class="lazyload" 
+      )
+
+    img.picture__img(
+      class="lazyload" 
+      src=`${file.getPath(fileTitle, fileExtension)}`
+      data-src=`${file.getPath(fileTitle, fileExtension)}`
+      alt=fileName
+    )

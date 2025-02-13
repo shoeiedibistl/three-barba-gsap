@@ -16,7 +16,4 @@ node_modules/
 dist/
 
 # Генерируемые файлы
-src/pug/mixins.pug
-
-package-lock.json
-yarn.lock
+src/blocks/mixins.pug

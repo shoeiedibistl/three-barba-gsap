@@ -5,64 +5,44 @@ block variables
     const pageName = 'ui'
     const pageTitle = 'ui'
 
+block modal
+  //- +empty-modal
+  +response-modal(id = 'response-modal')
+  +test-modal
+
+
 block content
-  main.ui-page(data-barba='container', data-barba-namespace=pageName)
+  main
     .inner
+      h1.title-64 H1 класс title-64
+      h2.title-36 H2 класс title-36
       br
       br
+      p.text-18  text-18
+      p.text-22  text-22
       br
-      //- +rem-select(ordersSelectProps3)(placeholder='Область применения')
+      br
+      +select(['Мужской','Женский'])(placeholder='Пол')
       br
       br
+      +input(placeholder='place')
       br
-
-      form.contacts-form__form(data-form-id='main-form', action='#')
-        .contacts-form__row
-          .contacts-form__item
-            +ui-input-rem#contacts-form1(
-              type='text',
-              placeholder='Имя *',
-              name='fio',
-              required='',
-              data-validate='text-only'
-            )
-          p.font-bold Только русские буквы
-          .contacts-form__item
-            +ui-input-rem#contacts-form1(
-              type='text',
-              placeholder='Имя *',
-              name='fio',
-              required='',
-              data-validate='text-cyrillic'
-            )
-          .contacts-form__item
-            +ui-input-rem#contacts-form1(
-              type='text',
-              placeholder='Никнейм *',
-              name='nickname',
-              required='',
-              data-validate='text'
-            )
-
-        .contacts-form__row
-          .contacts-form__item
-            +ui-input-rem#contacts-form2(
-              type='email',
-              required='',
-              placeholder='Email *',
-              data-validate='email',
-              name='email',
-              minlength='3'
-            )
-
-        .contacts-form__row
-          .contacts-form__item
-            +ui-input-rem#contacts-form3(
-              type='tel',
-              data-mask-phone='',
-              placeholder='Телефон *',
-              name='phone',
-              required='',
-              data-validate='tel'
-            )
-        button(type='submit') Send
+      br
+      +button("Кнопка")
+      br
+      br
+      +button("модалка-1")(data-modal-open='response-modal')
+      br
+      br
+      +button("модалка-2")(data-modal-open='test-modal')
+      br
+      br
+      +checkbox("текст")
+      br
+      br
+      +textarea(placeholder='Имя', name='name')
+      br
+      br
+      +picture("test.jpg",true)
+      +pictureRandom()
+      +pictureRandom()

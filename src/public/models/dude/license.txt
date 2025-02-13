@@ -1,0 +1,8 @@
+Model Information:
+* title:	character animation from iclone 8
+* source:	https://sketchfab.com/3d-models/character-animation-from-iclone-8-b0343f5b1aa6467981b9ded6306a88f3
+* author:	Keith_Pamment (https://sketchfab.com/Keith_Pamment)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

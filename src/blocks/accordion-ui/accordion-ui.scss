@@ -1,0 +1,26 @@
+.accordion-ui {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  transition: $transition;
+
+  &__header {
+    padding-top: rem(24px);
+    padding-bottom: rem(24px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &.active {
+      svg {
+        transition: $transition;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__content {
+    padding: rem(20px) 0;
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+.input-ui {
+  position: relative;
+  width: 100%;
+  @include custom-placeholder;
+  overflow: hidden;
+  border-radius: rem(8px);
+
+  input {
+    width: 100%;
+    height: rem(60px);
+    caret-color: #62215b;
+    border: 1px solid var(--unnamed, #f0e7ef);
+    background: #f8f4f8;
+    transition: $transition;
+    color: var(--unnamed, #62215b);
+    font-size: rem(16px);
+    font-weight: 420;
+    line-height: 110%;
+    padding: rem(29px) rem(62px) rem(22px) rem(24px);
+    caret-width: 1px;
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:focus {
+      border: 1px solid var(--1, #62215b);
+      box-shadow: 0px rem(10px) rem(16px) rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .parsley-errors-list {
+    margin-top: rem(6px);
+    color: #e62929;
+    font-size: rem(10px);
+    font-weight: 420;
+    line-height: 110%;
+    text-transform: uppercase;
+    @media #{media('<',d)} {
+      font-size: rem(8px);
+    }
+  }
+}

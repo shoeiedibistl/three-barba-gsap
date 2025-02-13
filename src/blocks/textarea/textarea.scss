@@ -1,0 +1,51 @@
+$textarea-background: #f8f4f8;
+
+.textarea-ui {
+  @include custom-placeholder;
+  position: relative;
+  padding-top: rem(26px);
+  border-radius: rem(8px);
+  border: 1px solid var(--unnamed, #f0e7ef);
+  background-color: $textarea-background;
+  transition: $transition;
+  overflow: hidden;
+  &:focus-within {
+    border: 1px solid var(--1, #62215b);
+    box-shadow: 0px rem(10px) rem(16px) rgba(0, 0, 0, 0.05);
+  }
+
+  &__service {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  textarea {
+    border: 1px transparent;
+    padding-left: rem(24px);
+    padding-right: rem(50px);
+    height: 100%;
+    width: 100%;
+    caret-color: #62215b;
+    resize: none;
+    background-color: $textarea-background;
+
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+    color: var(--1, #62215b);
+    font-size: rem(16px);
+    font-weight: 420;
+    line-height: 110%; /* 17.6px */
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &.parsley-error {
+      border-color: color(error);
+    }
+  }
+}
